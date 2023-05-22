@@ -13,7 +13,7 @@ class School(models.Model):
     def __str__(self):
         return self.name
     def get_absolute_url(self):
-        return reverse('School_Detail',kwargs={'pk':'school'})
+        return reverse('School_Detail',kwargs={'pk':self.pk})
 
 class Student(models.Model):
     school=models.ForeignKey(School,on_delete=models.CASCADE,related_name='students')
@@ -23,4 +23,5 @@ class Student(models.Model):
 
     def __str__(self):
         return self.sname
+    
 

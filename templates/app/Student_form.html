@@ -1,0 +1,15 @@
+{% extends 'app/Dummy.html' %}
+
+{% block title %}
+<title>Student <Form:post></Form:post></title>
+{% endblock %}
+{% block body_block %}
+<center>
+    <h1>Fill the Student details</h1>
+    <form method="POST">
+        {% csrf_token %}
+            {{form.as_p}}
+        <input type="submit" value="Student_submit" class="btn-btn-primary">
+    </form>
+</center>
+{% endblock %}

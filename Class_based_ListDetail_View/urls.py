@@ -23,6 +23,9 @@ urlpatterns = [
     path('Home/',Home.as_view(),name='Home'),
     path('Student_list/',Student_list.as_view(),name='Student_list'),
 
+   path('School_form/',School_form.as_view(),name='School_form'),
+#    path('Student_form/',Student_form.as_view(),name='Student_form'),
+
 
     re_path('(?P<pk>\d+)/',School_Detail.as_view(),name='School_Detail'),
       
