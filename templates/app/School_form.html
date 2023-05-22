@@ -5,12 +5,21 @@
 {% endblock %}
 {% block body_block %}
 <center>
-    <h1>Fill the insert the data</h1>
+    {% if form.instance.pk %}
+    <h1>Update the data</h1>
+    {% else %}
+    <h1>Insert the data</h1>
+    {% endif %}
     <form  method="POST">
         {% csrf_token %}
             {{form.as_p}}
 
-        <input type="submit" value="Create" class="btn-btn-primary">
+
+        {% if form.instance.pk %}
+        <input type="submit" value="Update" class="btn-btn-sucess">
+        {% else %}
+        <input type="submit" value="Create" class="btn-btn-sucess">
+        {% endif %}
     </form>
 </center>
 {% endblock %}

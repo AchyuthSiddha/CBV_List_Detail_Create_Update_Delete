@@ -15,6 +15,9 @@
     {% for i in Schooolobj.students.all %}
     <h6>Student name is{{i.sname}}</h6>
     <h6>age of Student is{{i.age}}</h6>
+
     {% endfor %}
+    <a href="{% url 'SchoolUpdate' pk=Schooolobj.pk %}" class="btn btn-primary">SchoolUpdate</a>
+    <a href="{% url 'SchoolDelete' pk=Schooolobj.pk %}" class="btn btn-primary">DeleteSchool</a>
 </center>
 {% endblock %}
